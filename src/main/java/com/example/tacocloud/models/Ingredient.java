@@ -1,10 +1,8 @@
 package com.example.tacocloud.models;
 
 import lombok.Data;
-import lombok.Setter;
 
 @Data
-@Setter
 public class Ingredient {
 
     private final String id;
