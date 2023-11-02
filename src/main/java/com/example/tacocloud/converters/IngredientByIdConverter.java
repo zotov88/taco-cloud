@@ -1,10 +1,6 @@
 package com.example.tacocloud.converters;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.example.tacocloud.models.Ingredient;
-import com.example.tacocloud.models.Type;
 import com.example.tacocloud.repository.IngredientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
