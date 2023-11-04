@@ -1,4 +1,4 @@
-package com.example.tacocloud.models;
+package com.example.tacocloud.model;
 
 import lombok.Data;
 import org.springframework.security.crypto.password.PasswordEncoder;

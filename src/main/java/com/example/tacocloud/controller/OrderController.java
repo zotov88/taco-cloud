@@ -1,6 +1,6 @@
-package com.example.tacocloud.controllers;
+package com.example.tacocloud.controller;
 
-import com.example.tacocloud.models.TacoOrder;
+import com.example.tacocloud.model.TacoOrder;
 import com.example.tacocloud.repository.OrderRepository;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;

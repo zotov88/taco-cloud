@@ -1,11 +1,10 @@
-package com.example.tacocloud.controllers;
+package com.example.tacocloud.controller;
 
-import com.example.tacocloud.models.Ingredient;
-import com.example.tacocloud.models.Taco;
-import com.example.tacocloud.models.TacoOrder;
-import com.example.tacocloud.models.Type;
+import com.example.tacocloud.model.Ingredient;
+import com.example.tacocloud.model.Taco;
+import com.example.tacocloud.model.TacoOrder;
+import com.example.tacocloud.model.Type;
 import com.example.tacocloud.repository.IngredientRepository;
-import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,7 +34,7 @@ public class DesignTacoController {
     }
 
     @PostMapping
-    public String processTaco(@Valid Taco taco,
+    public String processTaco(Taco taco,
                               Errors errors,
                               @ModelAttribute TacoOrder tacoOrder) {
         if (errors.hasErrors()) {

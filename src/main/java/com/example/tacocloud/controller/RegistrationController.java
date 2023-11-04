@@ -1,6 +1,6 @@
-package com.example.tacocloud.controllers;
+package com.example.tacocloud.controller;
 
-import com.example.tacocloud.models.RegistrationForm;
+import com.example.tacocloud.model.RegistrationForm;
 import com.example.tacocloud.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;

@@ -1,7 +1,7 @@
 package com.example.tacocloud.config;
 
-import com.example.tacocloud.models.Ingredient;
-import com.example.tacocloud.models.Type;
+import com.example.tacocloud.model.Ingredient;
+import com.example.tacocloud.model.Type;
 import com.example.tacocloud.repository.IngredientRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
