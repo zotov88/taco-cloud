@@ -1,9 +1,6 @@
 package com.example.tacocloud.model;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -57,4 +54,7 @@ public class TacoOrder implements Serializable {
     public void addTaco(Taco taco) {
         tacos.add(taco);
     }
+
+    @ManyToOne
+    private Client client;
 }

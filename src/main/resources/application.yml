@@ -15,3 +15,6 @@ contact-points:
   - casshost-2.tacocloud.com
   - casshost-3.tacocloud.com
 port: 9043
+
+server:
+  port: 9090

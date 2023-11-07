@@ -4,6 +4,7 @@ import com.example.tacocloud.model.Client;
 import com.example.tacocloud.repository.UserRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -11,12 +12,12 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import java.util.List;
 
 @Configuration
 @EnableWebSecurity
+@EnableGlobalMethodSecurity
 public class SecurityConfig {
 
     @Bean
@@ -48,12 +49,15 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((request) -> request
-                        .requestMatchers(RESOURCES_WHITE_LIST.toArray(String[]::new)).permitAll()
-                        .requestMatchers(AUTH_LIST.toArray(String[]::new)).hasRole("USER")
+                        .requestMatchers(RESOURCES_WHITE_LIST.toArray(String[]::new)).hasRole("USER")
+                        .requestMatchers(AUTH_LIST.toArray(String[]::new)).permitAll()
                         .anyRequest().authenticated())
                 .formLogin((form) -> form
                         .loginPage("/login")
-                        .permitAll());
+                        .defaultSuccessUrl("/"))
+                .logout((logout) -> logout
+                        .logoutUrl("/logout")
+                        .logoutSuccessUrl("/login"));
 
         return http.build();
     }
